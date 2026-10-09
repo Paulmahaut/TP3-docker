@@ -3,6 +3,7 @@
   docker_container:
     name: my-database
     image: paulmahaut/tp-database
+    pull: always 
     networks:
       - name: app-network
     env:

@@ -3,6 +3,7 @@
   docker_container:
     name: simple-api
     image: paulmahaut/tp-simple-api
+    pull: always 
     networks:
       - name: app-network
     env:

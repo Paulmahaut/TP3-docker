@@ -3,6 +3,7 @@
   docker_container:
     name: http-server
     image: paulmahaut/tp-http-server
+    pull: always 
     networks:
       - name: app-network
     published_ports:
