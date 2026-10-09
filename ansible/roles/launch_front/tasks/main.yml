@@ -1,0 +1,10 @@
+- name: Lancer le front
+  community.docker.docker_container:
+    name: front
+    image: paulmahaut/tp-front:latest
+    pull: always
+    networks:
+      - name: app-network
+    restart_policy: unless-stopped
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python3

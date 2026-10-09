@@ -39,6 +39,14 @@ jobs:
           push: true
           tags: paulmahaut/tp-http-server:latest
 
+      - name: Build et push front
+        uses: docker/build-push-action@v6
+        with:
+          context: ./front
+          push: true
+          tags: paulmahaut/tp-front:latest
+
+
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
