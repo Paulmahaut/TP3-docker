@@ -1,0 +1,14 @@
+---
+- name: Launch API container
+  docker_container:
+    name: simple-api
+    image: paulmahaut/tp-simple-api
+    networks:
+      - name: app-network
+    env:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://my-database:5432/db
+      SPRING_DATASOURCE_USERNAME: usr
+      SPRING_DATASOURCE_PASSWORD: pwd
+    restart_policy: unless-stopped
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python3

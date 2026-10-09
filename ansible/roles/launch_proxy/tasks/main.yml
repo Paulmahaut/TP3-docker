@@ -1,0 +1,12 @@
+---
+- name: Launch proxy container
+  docker_container:
+    name: http-server
+    image: paulmahaut/tp-http-server
+    networks:
+      - name: app-network
+    published_ports:
+      - "80:80"
+    restart_policy: unless-stopped
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python3
